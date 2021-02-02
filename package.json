@@ -2,8 +2,14 @@
   "name": "bdd",
   "version": "1.0.0",
   "description": "game of life behavior driven development with cucumber.js",
-  "main": "index.js",
-  "scripts": {},
+  "main": "src/index.mjs",
+  "type": "module",
+  "scripts": {
+    "start": "node src/index.mjs"
+  },
   "author": "TheGhostSpirit",
-  "license": "ISC"
+  "license": "ISC",
+  "engines": {
+    "node": ">=14.0"
+  }
 }
