@@ -1,0 +1,9 @@
+{
+  "name": "bdd",
+  "version": "1.0.0",
+  "description": "game of life behavior driven development with cucumber.js",
+  "main": "index.js",
+  "scripts": {},
+  "author": "TheGhostSpirit",
+  "license": "ISC"
+}
