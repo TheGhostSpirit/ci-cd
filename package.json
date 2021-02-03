@@ -2,14 +2,22 @@
   "name": "bdd",
   "version": "1.0.0",
   "description": "game of life behavior driven development with cucumber.js",
-  "main": "src/index.mjs",
-  "type": "module",
+  "main": "src/index.ts",
   "scripts": {
-    "start": "node src/index.mjs"
+    "start": "npx ts-node src/index.ts",
+    "build": "npx tsc",
+    "test": "npx cucumber-js src/features/**/*.feature --require-module ts-node/register --require src/steps/**/*.ts"
   },
   "author": "TheGhostSpirit",
   "license": "ISC",
   "engines": {
     "node": ">=14.0"
+  },
+  "devDependencies": {
+    "@cucumber/cucumber": "^7.0.0",
+    "@types/cucumber": "^7.0.0",
+    "cucumber-tsflow": "^4.0.0-rc.1",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.1.3"
   }
 }

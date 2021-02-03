@@ -1,7 +1,8 @@
-import { Game as DomainGame } from '../domain/game.mjs';
+import { Cell } from '../domain/cell';
+import { Game as DomainGame } from '../domain/game';
 
 export class Game extends DomainGame {
-  constructor(grid) {
+  constructor(grid: (0 | 1)[][]) {
     super(grid);
   }
 
@@ -10,7 +11,7 @@ export class Game extends DomainGame {
     console.log(`Generation: ${this.generation}\n`);
   }
 
-  getGridRepresentation() {
+  getGridRepresentation(): string {
     return [...this.grid.cells()].reduce(
       (representation, cell, i) =>
         representation +
@@ -21,7 +22,7 @@ export class Game extends DomainGame {
     ) + '|';
   }
 
-  getCellStatusIdentifier(cell) {
+  getCellStatusIdentifier(cell: Cell): 'X' | '.' {
     return cell.isAlive ? 'X' : '.';
   }
 }

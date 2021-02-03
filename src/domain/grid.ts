@@ -1,12 +1,14 @@
-import { Cell } from './cell.mjs';
+import { Cell } from './cell';
 
 export class Grid {
 
-  constructor(grid) {
-    this.grid = grid.map((row, i) => row.map((cell, j) => new Cell(cell, i, j)));
+  private grid: Cell[][];
+
+  constructor(grid: (0 | 1)[][]) {
+    this.grid = grid.map((row, i) => row.map((cell, j) => new Cell(!!cell, i, j)));
   }
 
-  get size() {
+  get size(): number {
     return this.grid.length;
   }
 
@@ -18,7 +20,15 @@ export class Grid {
     }
   }
 
-  getNeighbours(cell) {
+  getLivingNeighbours(cell: Cell): Cell[] {
+    return this.getNeighbours(cell).filter(cell => cell.isAlive);
+  }
+
+  getDeadNeighbours(cell: Cell): Cell[] {
+    return this.getNeighbours(cell).filter(cell => !cell.isAlive);
+  }
+
+  private getNeighbours(cell: Cell): Cell[] {
     return [
       { i: cell.i + 1, j: cell.j },
       { i: cell.i + 1, j: cell.j - 1 },
@@ -33,15 +43,7 @@ export class Grid {
       .map(ij => this.grid[ij.i][ij.j]);
   }
 
-  getLivingNeighbours(cell) {
-    return this.getNeighbours(cell).filter(cell => cell.isAlive);
-  }
-
-  getDeadNeighbours(cell) {
-    return this.getNeighbours(cell).filter(cell => !cell.isAlive);
-  }
-
-  insideBoundaries(i, j) {
+  private insideBoundaries(i: number, j: number): boolean {
     return i >= 0 && i < this.size && j >= 0 && j < this.size;
   }
 

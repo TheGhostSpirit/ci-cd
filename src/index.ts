@@ -1,4 +1,4 @@
-import { Game } from './ui/game.mjs';
+import { Game } from './ui/game';
 
 const game = new Game([
   [0, 0, 0, 0, 0],
@@ -11,5 +11,5 @@ const game = new Game([
 game.print();
 game.nextGeneration();
 game.print();
-game.setGeneration(0);
+game.generation = 0;
 game.print();
