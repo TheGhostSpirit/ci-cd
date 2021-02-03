@@ -1,24 +1,20 @@
 import { Game as DomainGame } from '../domain/game.mjs';
 
-export class Game {
+export class Game extends DomainGame {
   constructor(grid) {
-    this.game = new DomainGame(grid);
-  }
-
-  nextGeneration() {
-    this.game.nextGeneration();
+    super(grid);
   }
 
   print() {
     console.log(this.getGridRepresentation());
-    console.log(`Generation: ${this.game.generation}\n`);
+    console.log(`Generation: ${this.generation}\n`);
   }
 
   getGridRepresentation() {
-    return [...this.game.grid.cells()].reduce(
+    return [...this.grid.cells()].reduce(
       (representation, cell, i) =>
         representation +
-        (i % this.game.grid.size === 0 && i > 0
+        (i % this.grid.size === 0 && i > 0
           ? `|\n|${this.getCellStatusIdentifier(cell)}`
           : `|${this.getCellStatusIdentifier(cell)}`),
       ''

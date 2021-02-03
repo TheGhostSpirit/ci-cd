@@ -26,6 +26,11 @@ export class Game {
     this.grid = new Grid(nextState);
   }
 
+  setGeneration(generation) {
+    this.generation = generation;
+    this.grid = this.generations[generation];
+  }
+
   applyRules(cell) {
     return this.isLivingOn(cell) || this.isBorn(cell) ? 1 : 0;
   }
