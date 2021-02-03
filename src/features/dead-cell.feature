@@ -1,11 +1,11 @@
-Feature: title
-  In order to value
-  As a role
-  I want feature
+Feature: Finding dead cell next state
+  As a player
+  I want to find a dead cell next state
 
-  Scenario: title
-    Given context
-    When event
-    Then outcome
-  
-  
+  Scenario: dead cell has no living neighbour
+    Given the following grid
+      | . | . | . |
+      | . | . | . |
+      | . | . | . |
+    When player triggers next generation 
+    Then central cell should be .
