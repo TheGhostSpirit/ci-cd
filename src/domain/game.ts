@@ -1,4 +1,4 @@
-import { Cell } from './cell';
+import { Cell, CellStatus } from './cell';
 import { Grid } from './grid';
 
 export class Game {
@@ -17,7 +17,7 @@ export class Game {
 
   grid: Grid;
 
-  constructor(grid: (0 | 1)[][]) {
+  constructor(grid: CellStatus[][]) {
     this.grid = new Grid(grid);
   }
 
@@ -25,7 +25,7 @@ export class Game {
     this._generation++;
     this.generations.push(this.grid);
 
-    const nextState: (0 | 1)[][] = [];
+    const nextState: CellStatus[][] = [];
     [...this.grid.cells()]
       .map((cell) => this.applyRules(cell))
       .forEach((val, i) =>
@@ -37,8 +37,8 @@ export class Game {
     this.grid = new Grid(nextState);
   }
 
-  applyRules(cell: Cell): 0 | 1 {
-    return this.isLivingOn(cell) || this.isBorn(cell) ? 1 : 0;
+  applyRules(cell: Cell): CellStatus {
+    return this.isLivingOn(cell) || this.isBorn(cell) ? 'X' : '.';
   }
 
   isInOvercrowding(cell: Cell): boolean {

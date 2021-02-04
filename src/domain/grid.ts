@@ -1,11 +1,11 @@
-import { Cell } from './cell';
+import { Cell, CellStatus } from './cell';
 
 export class Grid {
 
   private grid: Cell[][];
 
-  constructor(grid: (0 | 1)[][]) {
-    this.grid = grid.map((row, i) => row.map((cell, j) => new Cell(!!cell, i, j)));
+  constructor(grid: CellStatus[][]) {
+    this.grid = grid.map((row, i) => row.map((cell, j) => new Cell(cell, i, j)));
   }
 
   get size(): number {
