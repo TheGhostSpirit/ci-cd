@@ -21,6 +21,12 @@ export class Game {
     this.grid = new Grid(grid);
   }
 
+  setGrid(grid: CellStatus[][]) {
+    this.grid = new Grid(grid);
+    this._generation = 0;
+    this.generations = [];
+  }
+
   nextGeneration(): void {
     this._generation++;
     this.generations.push(this.grid);
