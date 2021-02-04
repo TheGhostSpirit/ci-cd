@@ -6,7 +6,7 @@
   "scripts": {
     "start": "npx ts-node src/index.ts",
     "build": "npx tsc",
-    "test": "npx cucumber-js src/features/**/*.feature --require-module ts-node/register --require src/steps/**/*.ts"
+    "test": "npx cucumber-js src/features/**/*.feature --require-module ts-node/register --require src/steps/**/*.ts --publish-quiet"
   },
   "author": "TheGhostSpirit",
   "license": "ISC",

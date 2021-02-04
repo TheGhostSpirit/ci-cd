@@ -15,7 +15,7 @@ export class Game {
 
   private generations: Grid[] = [];
 
-  protected grid: Grid;
+  grid: Grid;
 
   constructor(grid: (0 | 1)[][]) {
     this.grid = new Grid(grid);

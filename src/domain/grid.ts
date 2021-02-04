@@ -20,6 +20,10 @@ export class Grid {
     }
   }
 
+  cellAt(i: number, j: number): Cell {
+    return this.grid[i][j];
+  }
+
   getLivingNeighbours(cell: Cell): Cell[] {
     return this.getNeighbours(cell).filter(cell => cell.isAlive);
   }
