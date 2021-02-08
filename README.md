@@ -2,12 +2,11 @@
 
 ## Game of Life
 
-Projet TS avec Cucumber.JS / Cucumber-tsflow
+TS project with Cucumber.JS / Cucumber-tsflow
 
 ### Modules
 
 - domain: game of life models and logic
-- ui: simple console display for the game of life
 - steps: step definitions for scenari
 - features: scenari written in Gherkin language
 
@@ -18,16 +17,14 @@ Projet TS avec Cucumber.JS / Cucumber-tsflow
 
 ## Setup
 
-Installer les dépendances
+Install the dependencies
 
 ```
 npm i
 ```
 
-Lancer les tests cucumber:
+Launch cucumber tests
 
 ```
 npm test
 ```
-
-Quentin CARITEY
