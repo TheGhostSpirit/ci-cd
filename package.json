@@ -1,5 +1,5 @@
 {
-  "name": "@trefle-paquet/game-of-life",
+  "name": "tfp-game-of-life",
   "version": "0.0.1",
   "description": "game of life behavior driven development with cucumber.js",
   "scripts": {
