@@ -6,7 +6,7 @@
     "build": "npx tsc",
     "test": "npx cucumber-js src/features/**/*.feature --require-module ts-node/register --require src/steps/**/*.ts --publish-quiet"
   },
-  "author": "TheGhostSpirit",
+  "author": "trefle_paquet_150",
   "license": "ISC",
   "engines": {
     "node": ">=14.0"
