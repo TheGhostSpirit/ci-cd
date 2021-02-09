@@ -56,7 +56,7 @@ Feature: Finding dead cell next state
       | X | . | X |
       | . | X | X |
     When player triggers next generation 
-    Then central cell should be X
+    Then central cell should be .
 
   Scenario: dead central cell has 7 living neighbours
     Given the following grid
