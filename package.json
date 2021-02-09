@@ -1,6 +1,6 @@
 {
   "name": "tfp-game-of-life",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "game of life behavior driven development with cucumber.js",
   "scripts": {
     "build": "npx tsc",
